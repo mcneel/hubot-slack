@@ -90,7 +90,7 @@ class SlackClient
 
     @robot.logger.debug "Sending to #{room}: #{message}"
 
-    options = { as_user: true, link_names: 1 }
+    options = { as_user: true, link_names: 1, unfurl_links: false }
 
     if typeof message isnt 'string'
       @web.chat.postMessage(room, message.text, _.defaults(message, options))
