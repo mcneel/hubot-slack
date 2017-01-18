@@ -230,6 +230,7 @@ class SlackBot extends Adapter
         unless key of newUser
           newUser[key] = value
     delete @robot.brain.data.users[user.id]
+    console.log user
     @robot.brain.userForId user.id, newUser
 
 module.exports = SlackBot
